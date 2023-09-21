@@ -10,12 +10,13 @@
 
 # VS Code
 .vscode
-
 # Build folder contents
 build/
-
-#Unignore Makefile
+# Unignore Makefile
 !Makefile
+# Local test data file
+triangles.txt
+
 
 # Prerequisites
 *.d
