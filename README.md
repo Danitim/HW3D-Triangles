@@ -1,2 +1,11 @@
-# HW3D-Triangles
-Implementation of an algorithm that receives N (1&lt;N&lt;=1000000) triangles as input (the vertices of which are specified in 3D space) and outputs the numbers of those that intersect with at least one other triangle.
+# HW3D-triangles
+Implementation of algorithm, finding collisions between 3D-triangles by geometry modulating them.
+
+# Installation
+WIP
+
+# Testing
+- Create build folder and go there `mkdir build && cd build`
+- Run cmake builder command for the directory above `CMake ..`
+- Run makefile command `make`
+- Run any testing executable, made by `make`

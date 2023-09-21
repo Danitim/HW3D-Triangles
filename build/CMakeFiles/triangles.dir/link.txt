@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/triangles.dir/triangles.cpp.o -o triangles 

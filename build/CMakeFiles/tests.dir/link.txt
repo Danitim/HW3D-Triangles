@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tests.dir/tests.cpp.o CMakeFiles/tests.dir/geometry_objects.cpp.o -o tests  lib/libgtest.a 
