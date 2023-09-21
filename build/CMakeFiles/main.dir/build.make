@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles
+CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build
+CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/geometry/geometry.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/geometry/geometry.cpp.o: ../geometry/geometry.cpp
 CMakeFiles/main.dir/geometry/geometry.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/geometry/geometry.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/geometry/geometry.cpp.o -MF CMakeFiles/main.dir/geometry/geometry.cpp.o.d -o CMakeFiles/main.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/geometry/geometry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/geometry/geometry.cpp.o -MF CMakeFiles/main.dir/geometry/geometry.cpp.o.d -o CMakeFiles/main.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp
 
 CMakeFiles/main.dir/geometry/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/geometry/geometry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp > CMakeFiles/main.dir/geometry/geometry.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp > CMakeFiles/main.dir/geometry/geometry.cpp.i
 
 CMakeFiles/main.dir/geometry/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/geometry/geometry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp -o CMakeFiles/main.dir/geometry/geometry.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp -o CMakeFiles/main.dir/geometry/geometry.cpp.s
 
 CMakeFiles/main.dir/intersect.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/intersect.cpp.o: ../intersect.cpp
 CMakeFiles/main.dir/intersect.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/intersect.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/intersect.cpp.o -MF CMakeFiles/main.dir/intersect.cpp.o.d -o CMakeFiles/main.dir/intersect.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/intersect.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/intersect.cpp.o -MF CMakeFiles/main.dir/intersect.cpp.o.d -o CMakeFiles/main.dir/intersect.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp
 
 CMakeFiles/main.dir/intersect.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/intersect.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp > CMakeFiles/main.dir/intersect.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp > CMakeFiles/main.dir/intersect.cpp.i
 
 CMakeFiles/main.dir/intersect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/intersect.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp -o CMakeFiles/main.dir/intersect.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp -o CMakeFiles/main.dir/intersect.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -125,7 +125,7 @@ main: CMakeFiles/main.dir/geometry/geometry.cpp.o
 main: CMakeFiles/main.dir/intersect.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

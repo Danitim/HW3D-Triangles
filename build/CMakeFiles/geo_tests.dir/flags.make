@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/include -isystem /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest/include -isystem /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest
+CXX_INCLUDES = -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/include -isystem /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest/include -isystem /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest
 
 CXX_FLAGS = 
 

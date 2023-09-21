@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googlemock/src/gmock_main.cc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googlemock/src/gmock_main.cc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

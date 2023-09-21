@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles
+CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build
+CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build
 
 # Include any dependencies generated for this target.
 include googletest/googletest/CMakeFiles/gtest.dir/depend.make
@@ -72,16 +72,16 @@ include googletest/googletest/CMakeFiles/gtest.dir/flags.make
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: googletest/googletest/CMakeFiles/gtest.dir/flags.make
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../googletest/googletest/src/gtest-all.cc
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: googletest/googletest/CMakeFiles/gtest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest/src/gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest/src/gtest-all.cc
 
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -93,19 +93,19 @@ gtest_EXTERNAL_OBJECTS =
 lib/libgtest.a: googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
 lib/libgtest.a: googletest/googletest/CMakeFiles/gtest.dir/build.make
 lib/libgtest.a: googletest/googletest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../lib/libgtest.a"
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../lib/libgtest.a"
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean_target.cmake
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 googletest/googletest/CMakeFiles/gtest.dir/build: lib/libgtest.a
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/build
 
 googletest/googletest/CMakeFiles/gtest.dir/clean:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest.dir/cmake_clean.cmake
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/clean
 
 googletest/googletest/CMakeFiles/gtest.dir/depend:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/depend
 

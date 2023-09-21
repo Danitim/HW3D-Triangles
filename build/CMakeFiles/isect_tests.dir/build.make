@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles
+CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build
+CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/isect_tests.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/isect_tests.dir/flags.make
 CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o: CMakeFiles/isect_tests.dir/flags.make
 CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o: ../tests/isect_tests.cpp
 CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o: CMakeFiles/isect_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o -MF CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o.d -o CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/isect_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o -MF CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o.d -o CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/isect_tests.cpp
 
 CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/isect_tests.cpp > CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/isect_tests.cpp > CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.i
 
 CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/isect_tests.cpp -o CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/isect_tests.cpp -o CMakeFiles/isect_tests.dir/tests/isect_tests.cpp.s
 
 CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o: CMakeFiles/isect_tests.dir/flags.make
 CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o: ../geometry/geometry.cpp
 CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o: CMakeFiles/isect_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o -MF CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o.d -o CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o -MF CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o.d -o CMakeFiles/isect_tests.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp
 
 CMakeFiles/isect_tests.dir/geometry/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/isect_tests.dir/geometry/geometry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp > CMakeFiles/isect_tests.dir/geometry/geometry.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp > CMakeFiles/isect_tests.dir/geometry/geometry.cpp.i
 
 CMakeFiles/isect_tests.dir/geometry/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/isect_tests.dir/geometry/geometry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp -o CMakeFiles/isect_tests.dir/geometry/geometry.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp -o CMakeFiles/isect_tests.dir/geometry/geometry.cpp.s
 
 CMakeFiles/isect_tests.dir/intersect.cpp.o: CMakeFiles/isect_tests.dir/flags.make
 CMakeFiles/isect_tests.dir/intersect.cpp.o: ../intersect.cpp
 CMakeFiles/isect_tests.dir/intersect.cpp.o: CMakeFiles/isect_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/isect_tests.dir/intersect.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/intersect.cpp.o -MF CMakeFiles/isect_tests.dir/intersect.cpp.o.d -o CMakeFiles/isect_tests.dir/intersect.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/isect_tests.dir/intersect.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/isect_tests.dir/intersect.cpp.o -MF CMakeFiles/isect_tests.dir/intersect.cpp.o.d -o CMakeFiles/isect_tests.dir/intersect.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp
 
 CMakeFiles/isect_tests.dir/intersect.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/isect_tests.dir/intersect.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp > CMakeFiles/isect_tests.dir/intersect.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp > CMakeFiles/isect_tests.dir/intersect.cpp.i
 
 CMakeFiles/isect_tests.dir/intersect.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/isect_tests.dir/intersect.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp -o CMakeFiles/isect_tests.dir/intersect.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp -o CMakeFiles/isect_tests.dir/intersect.cpp.s
 
 # Object files for target isect_tests
 isect_tests_OBJECTS = \
@@ -126,9 +126,9 @@ isect_tests: CMakeFiles/isect_tests.dir/intersect.cpp.o
 isect_tests: CMakeFiles/isect_tests.dir/build.make
 isect_tests: lib/libgtest.a
 isect_tests: CMakeFiles/isect_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable isect_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable isect_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/isect_tests.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -D TEST_TARGET=isect_tests -D TEST_EXECUTABLE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/isect_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=isect_tests_TESTS -D CTEST_FILE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/isect_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.22/Modules/GoogleTestAddTests.cmake
+	/usr/bin/cmake -D TEST_TARGET=isect_tests -D TEST_EXECUTABLE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/isect_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=isect_tests_TESTS -D CTEST_FILE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/isect_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.22/Modules/GoogleTestAddTests.cmake
 
 # Rule to build all files generated by this target.
 CMakeFiles/isect_tests.dir/build: isect_tests
@@ -139,6 +139,6 @@ CMakeFiles/isect_tests.dir/clean:
 .PHONY : CMakeFiles/isect_tests.dir/clean
 
 CMakeFiles/isect_tests.dir/depend:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles/isect_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles/isect_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/isect_tests.dir/depend
 

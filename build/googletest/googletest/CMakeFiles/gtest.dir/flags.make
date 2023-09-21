@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest/include -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/googletest/googletest
+CXX_INCLUDES = -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest/include -I/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/googletest/googletest
 
 CXX_FLAGS = -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
 

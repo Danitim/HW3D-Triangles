@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles
+CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build
+CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/googletest//CMakeFiles/progress.marks
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles 0
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/googletest//CMakeFiles/progress.marks
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/clean
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,17 +158,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/preinstall
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/preinstall
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 googletest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles
+CMAKE_SOURCE_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build
+CMAKE_BINARY_DIR = /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/geo_tests.dir/depend.make
@@ -72,30 +72,30 @@ include CMakeFiles/geo_tests.dir/flags.make
 CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o: CMakeFiles/geo_tests.dir/flags.make
 CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o: ../tests/geo_tests.cpp
 CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o: CMakeFiles/geo_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o -MF CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o.d -o CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/geo_tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o -MF CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o.d -o CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/geo_tests.cpp
 
 CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/geo_tests.cpp > CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/geo_tests.cpp > CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.i
 
 CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/tests/geo_tests.cpp -o CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/tests/geo_tests.cpp -o CMakeFiles/geo_tests.dir/tests/geo_tests.cpp.s
 
 CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o: CMakeFiles/geo_tests.dir/flags.make
 CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o: ../geometry/geometry.cpp
 CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o: CMakeFiles/geo_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o -MF CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o.d -o CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o -MF CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o.d -o CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o -c /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp
 
 CMakeFiles/geo_tests.dir/geometry/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/geo_tests.dir/geometry/geometry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp > CMakeFiles/geo_tests.dir/geometry/geometry.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp > CMakeFiles/geo_tests.dir/geometry/geometry.cpp.i
 
 CMakeFiles/geo_tests.dir/geometry/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/geo_tests.dir/geometry/geometry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp -o CMakeFiles/geo_tests.dir/geometry/geometry.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp -o CMakeFiles/geo_tests.dir/geometry/geometry.cpp.s
 
 # Object files for target geo_tests
 geo_tests_OBJECTS = \
@@ -110,9 +110,9 @@ geo_tests: CMakeFiles/geo_tests.dir/geometry/geometry.cpp.o
 geo_tests: CMakeFiles/geo_tests.dir/build.make
 geo_tests: lib/libgtest.a
 geo_tests: CMakeFiles/geo_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable geo_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable geo_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/geo_tests.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -D TEST_TARGET=geo_tests -D TEST_EXECUTABLE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/geo_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=geo_tests_TESTS -D CTEST_FILE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/geo_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.22/Modules/GoogleTestAddTests.cmake
+	/usr/bin/cmake -D TEST_TARGET=geo_tests -D TEST_EXECUTABLE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/geo_tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=geo_tests_TESTS -D CTEST_FILE=/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/geo_tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/share/cmake-3.22/Modules/GoogleTestAddTests.cmake
 
 # Rule to build all files generated by this target.
 CMakeFiles/geo_tests.dir/build: geo_tests
@@ -123,6 +123,6 @@ CMakeFiles/geo_tests.dir/clean:
 .PHONY : CMakeFiles/geo_tests.dir/clean
 
 CMakeFiles/geo_tests.dir/depend:
-	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/build/CMakeFiles/geo_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build /mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/CMakeFiles/geo_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/geo_tests.dir/depend
 

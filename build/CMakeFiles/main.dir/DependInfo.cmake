@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/geometry/geometry.cpp" "CMakeFiles/main.dir/geometry/geometry.cpp.o" "gcc" "CMakeFiles/main.dir/geometry/geometry.cpp.o.d"
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/intersect.cpp" "CMakeFiles/main.dir/intersect.cpp.o" "gcc" "CMakeFiles/main.dir/intersect.cpp.o.d"
-  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-triangles/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/geometry/geometry.cpp" "CMakeFiles/main.dir/geometry/geometry.cpp.o" "gcc" "CMakeFiles/main.dir/geometry/geometry.cpp.o.d"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/intersect.cpp" "CMakeFiles/main.dir/intersect.cpp.o" "gcc" "CMakeFiles/main.dir/intersect.cpp.o.d"
+  "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
