@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/isect_tests[1]_tests.cmake")
-  include("/mnt/c/Users/danit/Desktop/Drive/Code/YLab/HW3D-Triangles/build/isect_tests[1]_tests.cmake")
-else()
-  add_test(isect_tests_NOT_BUILT isect_tests_NOT_BUILT)
-endif()

@@ -1,3 +1,22 @@
+# Important part to ignore binary files
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+# The end of the important part
+
+
+# VS Code
+.vscode
+
+# Build folder contents
+build/
+
+#Unignore Makefile
+!Makefile
+
 # Prerequisites
 *.d
 
