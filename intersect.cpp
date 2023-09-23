@@ -1,9 +1,9 @@
 #include "intersect.hpp"
 
-void find_intersecting_triangles(std::set<int> &intersections, const std::vector<Triangle3D> &array) {
+void intersect_each_with_each(std::set<int> &intersections, const std::vector<Triangle3D> &array) {
     for (int i=1; i < array.size(); ++i) {
         for (int j=0; j < i; ++j) {
-            if (check_intersection3D(array[i], array[j])) {
+            if (typed_intersection(array[i], array[j])) {
                 intersections.insert(i);
                 intersections.insert(j);
             }
@@ -12,7 +12,48 @@ void find_intersecting_triangles(std::set<int> &intersections, const std::vector
     return;
 }
 
-bool check_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+bool typed_intersection(const Triangle3D &t0, const Triangle3D &t1) {
+    short type0 = t0.get_type();
+    short type1 = t1.get_type();
+
+    switch(type0) {
+    case 1:
+        switch(type1) {
+            case 1: return t0.get_vertice(0).equal(t1.get_vertice(0));
+            case 2: return segpnt_intersection3D(t1, t0);
+            case 3: return tripnt_intersection3D(t1, t0);
+        }
+    case 2:
+        switch(type1) {
+            case 1: return segpnt_intersection3D(t0, t1);
+            case 2: return segseg_intersection3D(t0, t1);
+            case 3: return triseg_intersection3D(t1, t0);
+        }
+    case 3:
+        switch(type1) {
+            case 1: return tripnt_intersection3D(t0, t1);
+            case 2: return triseg_intersection3D(t0, t1);
+            case 3: return tritri_intersection3D(t0, t1);
+        }
+    }
+    return false;
+}
+
+bool segpnt_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+    return true;
+}
+bool segseg_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+    return true;
+}
+bool tripnt_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+    return true;
+}
+bool triseg_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+    return true;
+}
+
+bool tritri_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
+    std::cout << "3 vs 3 " << std::endl;
     //Compute the plane equation of T0
     Plane3D t0_plane(t0);
     

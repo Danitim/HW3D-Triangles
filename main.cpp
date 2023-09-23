@@ -13,7 +13,7 @@ int main() {
         triangles.push_back(t);
     }
 
-    find_intersecting_triangles(intersections, triangles);
+    intersect_each_with_each(intersections, triangles);
     for (int const &index : intersections)
         std::cout << index << std::endl;
 }

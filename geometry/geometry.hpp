@@ -24,9 +24,9 @@ public:
     Point2D(float x, float y);
     Point2D(const Point3D &p, short axis_index);
 
-    void operator=(Point2D &other);
-    Point2D operator+(Point2D &other);
-    Point2D operator-(Point2D &other);
+    void operator=(const Point2D &other);
+    Point2D operator+(const Point2D &other);
+    Point2D operator-(const Point2D &other);
 
     void print() const;
     bool equal(const Point2D &a) const;
@@ -45,9 +45,9 @@ public:
     Point3D();
     Point3D(float x, float y, float z);
 
-    void operator=(Point3D &other);
-    Point3D operator+(Point3D &other);
-    Point3D operator-(Point3D &other);
+    void operator=(const Point3D &other);
+    const Point3D operator+(const Point3D &other);
+    const Point3D operator-(const Point3D &other);
 
     bool collinear(const Point3D &p) const;
     void print() const;
@@ -84,11 +84,13 @@ public:
 
 class Triangle3D {
     std::vector<Point3D> vertices;
-
+    short type = 1; //1 = point, 2 = segment, 3 = triangle
 public:
     Triangle3D(const Point3D &v0, const Point3D &v1, const Point3D &v2);
 
     void copy_and_rearrange(std::vector<Point3D> &v, const std::vector<float> &sign_dist) const;
+    Point3D get_vertice(short index) const;
+    short get_type() const;
     void print() const;
     bool equal(const Triangle3D &t) const;
     bool valid() const;

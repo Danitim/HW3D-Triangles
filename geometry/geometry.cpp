@@ -16,13 +16,13 @@ Point2D::Point2D(const Point3D &p, short axis_index) {
     }
 }
 
-void Point2D::operator=(Point2D &other) {
+void Point2D::operator=(const Point2D &other) {
     x = other.x; y = other.y; return;
 }
-Point2D Point2D::operator+(Point2D &other) {
+Point2D Point2D::operator+(const Point2D &other) {
     return Point2D(x+other.x, y+other.y); 
 }
-Point2D Point2D::operator-(Point2D &other) {
+Point2D Point2D::operator-(const Point2D &other) {
     return Point2D(x-other.x, y-other.y); 
 }
 
@@ -43,13 +43,13 @@ Point3D::Point3D(float x, float y, float z): x(x), y(y), z(z) {};
 std::istream& operator>>(std::istream &input, Point3D &a) {
     input >> a.x >> a.y >> a.z; return input;
 }
-void Point3D::operator=(Point3D &other) {
+void Point3D::operator=(const Point3D &other) {
     x = other.x; y = other.y; z = other.z; return;
 }
-Point3D Point3D::operator+(Point3D &other) {
+const Point3D Point3D::operator+(const Point3D &other) {
     return Point3D(x+other.x, y+other.y, z+other.z);
 }
-Point3D Point3D::operator-(Point3D &other) {
+const Point3D Point3D::operator-(const Point3D &other) {
     return Point3D(x-other.x, y-other.y, z-other.z);
 }
 
@@ -125,7 +125,17 @@ Triangle3D::Triangle3D (const Point3D &v0, const Point3D &v1, const Point3D &v2)
     vertices.push_back(v0);
     vertices.push_back(v1);
     vertices.push_back(v2);
-    return;
+
+    //Is it a point?
+    if (v0.equal(v1) && v0.equal(v2)) {type = 1; return;}
+
+    //Is it a line segment?
+    Point3D a = {v1.x - v0.x, v1.y - v0.y, v1.z - v0.z};
+    Point3D b = {v2.x - v0.x, v2.y - v0.y, v2.z - v0.z};
+    if (a.collinear(b)) {type = 2; return;}
+
+    //Now this is a triangle
+    type = 3; return;
 }
 
 void Triangle3D::copy_and_rearrange(std::vector<Point3D> &v, const std::vector<float> &sign_dist) const {
@@ -147,6 +157,14 @@ void Triangle3D::copy_and_rearrange(std::vector<Point3D> &v, const std::vector<f
     v.push_back(vertices[2]);
     v.push_back(vertices[1]);
     return;
+}
+
+Point3D Triangle3D::get_vertice(short index) const {
+    return vertices[index];
+}
+
+short Triangle3D::get_type() const {
+    return type;
 }
 
 void Triangle3D::print() const {
