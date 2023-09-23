@@ -4,8 +4,8 @@ void find_intersecting_triangles(std::set<int> &intersections, const std::vector
     for (int i=1; i < array.size(); ++i) {
         for (int j=0; j < i; ++j) {
             if (check_intersection3D(array[i], array[j])) {
-                intersections.insert(i+1);
-                intersections.insert(j+1);
+                intersections.insert(i);
+                intersections.insert(j);
             }
         }
     }
