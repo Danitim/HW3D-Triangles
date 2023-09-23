@@ -8,14 +8,18 @@ set(geo_files
 set(isect_files
     ../geometry/geometry.hpp
     ../geometry/geometry.cpp
-    ../intersect.hpp
-    ../intersect.cpp)
+    ../intersection/intersect.hpp
+    ../intersection/intersect.cpp
+    ../intersection/degenerate.hpp
+    ../intersection/degenerate.cpp)
 
 set(main_files
     geometry/geometry.hpp
     geometry/geometry.cpp
-    intersect.hpp
-    intersect.cpp)
+    intersection/intersect.hpp
+    intersection/intersect.cpp
+    intersection/degenerate.hpp
+    intersection/degenerate.cpp)
 
 enable_testing()
 

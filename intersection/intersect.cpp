@@ -39,21 +39,8 @@ bool typed_intersection(const Triangle3D &t0, const Triangle3D &t1) {
     return false;
 }
 
-bool segpnt_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
-    return true;
-}
-bool segseg_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
-    return true;
-}
-bool tripnt_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
-    return true;
-}
-bool triseg_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
-    return true;
-}
 
 bool tritri_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
-    std::cout << "3 vs 3 " << std::endl;
     //Compute the plane equation of T0
     Plane3D t0_plane(t0);
     

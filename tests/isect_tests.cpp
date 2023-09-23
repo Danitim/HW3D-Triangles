@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../intersect.hpp"
+#include "../intersection/intersect.hpp"
 
 
 //Triangles in 3D intersection tests

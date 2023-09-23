@@ -1,4 +1,4 @@
-#include "intersect.hpp"
+#include "intersection/intersect.hpp"
 
 int main() {
     int n;
@@ -9,7 +9,6 @@ int main() {
         Point3D v0, v1, v2;
         std::cin >> v0 >> v1 >> v2;
         Triangle3D t(v0, v1, v2);
-        //if (!t.valid()) {std::cout << "Not a valid triangle. Exiting..." << std::endl; exit(-1);}
         triangles.push_back(t);
     }
 
