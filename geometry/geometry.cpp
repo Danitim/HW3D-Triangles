@@ -1,7 +1,5 @@
 #include "geometry.hpp"
 
-static const float EPS = 0.001;
-
 //Point2D methods
 Point2D::Point2D(float x, float y): x(x), y(y) {};
 
@@ -22,7 +20,7 @@ void Point2D::print() const{
 }
 
 bool Point2D::equal(const Point2D &a) const {
-    return (std::abs(x-a.x) < EPS) && (std::abs(y-a.y) < EPS);
+    return (std::abs(x-a.x) < cnst::EPS) && (std::abs(y-a.y) < cnst::EPS);
 }
 
 
@@ -44,13 +42,14 @@ void Vector2D::print() const{
 }
 
 bool Vector2D::equal(const Vector2D &a) const {
-    return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS);
+    return (fabs(x-a.x) < cnst::EPS) && (fabs(y-a.y) < cnst::EPS);
 }
 
 
 //Point3D methods
 Point3D::Point3D() {x=0; y=0; z=0;}
 Point3D::Point3D(float x, float y, float z): x(x), y(y), z(z) {};
+Point3D::Point3D(const Triangle3D &t): x(t.vertices[0].x), y(t.vertices[0].y), z(t.vertices[0].z) {};
 
 std::istream& operator>>(std::istream &input, Point3D &a) {
     input >> a.x >> a.y >> a.z; return input;
@@ -62,7 +61,7 @@ void Point3D::print() const{
 }
 
 bool Point3D::equal(const Point3D &a) const {
-    return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS) && (fabs(z-a.z) < EPS);
+    return (fabs(x-a.x) < cnst::EPS) && (fabs(y-a.y) < cnst::EPS) && (fabs(z-a.z) < cnst::EPS);
 }
 
 
@@ -74,13 +73,13 @@ Vector3D::Vector3D(const Point3D &other): x(other.x), y(other.y), z(other.z) {}
 Vector3D operator+(Vector3D &a, Vector3D &b) {
     return Vector3D(a.x+b.x, a.y+b.y, a.z+b.z);
 }
-Vector3D operator+(Point3D &a, Point3D &b) {
+Vector3D operator+(const Point3D &a, const Point3D &b) {
     return Vector3D(a.x+b.x, a.y+b.y, a.z+b.z);
 }
 Vector3D operator-(Vector3D &a, Vector3D &b) {
     return Vector3D(a.x-b.x, a.y-b.y, a.z-b.z);
 }
-Vector3D operator-(Point3D &a, Point3D &b) {
+Vector3D operator-(const Point3D &a, const Point3D &b) {
     return Vector3D(a.x-b.x, a.y-b.y, a.z-b.z);
 }
 
@@ -90,7 +89,7 @@ void Vector3D::print() const{
 }
 
 bool Vector3D::equal(const Vector3D &a) const {
-    return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS) && (fabs(z-a.z) < EPS);
+    return (fabs(x-a.x) < cnst::EPS) && (fabs(y-a.y) < cnst::EPS) && (fabs(z-a.z) < cnst::EPS);
 }
 
 bool Vector3D::collinear(const Vector3D &v) const {
@@ -147,7 +146,7 @@ bool Triangle2D::valid() const {
     float a = vertices[0].x * (vertices[1].y - vertices[2].y)
             + vertices[1].x * (vertices[2].y - vertices[0].y)
             + vertices[2].x * (vertices[0].y - vertices[1].y);
-    return (abs(a) < EPS ? false : true);
+    return (abs(a) < cnst::EPS ? false : true);
 }
 
 
@@ -261,10 +260,10 @@ bool Plane3D::coplanar(const Plane3D &p) {
 
 bool Plane3D::equal(const Plane3D &p) {
     if ((p.d == 0) && (d == 0)) return true;
-    if (p.n.x!=0) return coplanar(p) && ((fabs(n.x/p.n.x - d/p.d)) < EPS);
-    if (p.n.y!=0) return coplanar(p) && ((fabs(n.y/p.n.y - d/p.d)) < EPS);
-    if (p.n.z!=0) return coplanar(p) && ((fabs(n.z/p.n.z - d/p.d)) < EPS);
-    //So basicaly we cannot be here, so chill
+    if (p.n.x!=0) return coplanar(p) && ((fabs(n.x/p.n.x - d/p.d)) < cnst::EPS);
+    if (p.n.y!=0) return coplanar(p) && ((fabs(n.y/p.n.y - d/p.d)) < cnst::EPS);
+    if (p.n.z!=0) return coplanar(p) && ((fabs(n.z/p.n.z - d/p.d)) < cnst::EPS);
+    //So basically we cannot be here, so chill
     return false;
 }
 
@@ -302,9 +301,39 @@ void Line3D::print() const {
 }
 
 
+//LineSeg3D methods
+LineSeg3D::LineSeg3D(const Point3D &p0, const Point3D &p1) {
+    this->p0 = p0; this->p1 = p1;
+}
+LineSeg3D::LineSeg3D(const Triangle3D &t) {
+    Vector3D v01 = t.vertices[0] - t.vertices[1];
+    Vector3D v02 = t.vertices[0] - t.vertices[2];
+    Vector3D v12 = t.vertices[1] - t.vertices[2];
+
+    float d01 = dot(v01, v01);
+    float d02 = dot(v02, v02);
+    float d12 = dot(v12, v12);
+
+    if ((d01 >= d02) && (d01 >= d12)) {p0 = t.vertices[0]; p1 = t.vertices[1];}
+    else if ((d02 >= d01) && (d02 >= d12)) {p0 = t.vertices[0]; p1 = t.vertices[2];}
+    else {p0 = t.vertices[1]; p1 = t.vertices[2];}
+}
+
+bool LineSeg3D::equal(const LineSeg3D &ls) const{
+    return p0.equal(ls.p0) && p1.equal(ls.p1);
+}
+
+void LineSeg3D::print() const {
+    std::cout << "3D Line Segment:" << std::endl;
+    p0.print();
+    p1.print();
+    return;
+}
+
+
 //Other geometric functions
 bool same_sign(float a, float b) {
-    if ((fabs(a) < EPS) || (fabs(b) < EPS))
+    if ((fabs(a) < cnst::EPS) || (fabs(b) < cnst::EPS))
         return false;
     return (a*b >= 0.0f);
 }

@@ -19,21 +19,21 @@ bool typed_intersection(const Triangle3D &t0, const Triangle3D &t1) {
     switch(type0) {
     case 1:
         switch(type1) {
-            case 1: return t0.get_vertice(0).equal(t1.get_vertice(0));
-            case 2: return segpnt_intersection3D(t1, t0);
-            case 3: return tripnt_intersection3D(t1, t0);
+            case 1: {return t0.get_vertice(0).equal(t1.get_vertice(0)); break;}
+            case 2: {Point3D p(t0); LineSeg3D ls(t1); return segpnt_intersection3D(ls, p); break;}
+            case 3: {Point3D p(t1); return tripnt_intersection3D(t0, p); break;}
         }
     case 2:
         switch(type1) {
-            case 1: return segpnt_intersection3D(t0, t1);
-            case 2: return segseg_intersection3D(t0, t1);
-            case 3: return triseg_intersection3D(t1, t0);
+            case 1: {LineSeg3D ls(t0); Point3D p(t1); return segpnt_intersection3D(ls, p); break;}
+            case 2: {LineSeg3D ls0(t0); LineSeg3D ls1(t0); return segseg_intersection3D(ls0, ls1); break;}
+            case 3: {LineSeg3D ls(t0); return triseg_intersection3D(t1, ls); break;}
         }
     case 3:
         switch(type1) {
-            case 1: return tripnt_intersection3D(t0, t1);
-            case 2: return triseg_intersection3D(t0, t1);
-            case 3: return tritri_intersection3D(t0, t1);
+            case 1: {Point3D p(t1); return tripnt_intersection3D(t0, p); break;}
+            case 2: {LineSeg3D ls(t1); return triseg_intersection3D(t0, ls); break;}
+            case 3: {return tritri_intersection3D(t0, t1); break;}
         }
     }
     return false;

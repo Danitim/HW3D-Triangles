@@ -8,6 +8,10 @@
 #include <algorithm>
 #include <cmath>
 
+namespace cnst {
+    const float EPS = 0.001;
+}
+
 class Point3D;
 class Vector3D;
 class Point2D;
@@ -15,6 +19,7 @@ class Triangle3D;
 class Triangle2D;
 class Plane3D;
 class Line3D;
+class LineSeg3D;
 
 
 //Point-type classes
@@ -58,6 +63,8 @@ class Point3D {
 public:
     Point3D();
     Point3D(float x, float y, float z);
+    //Degenerate case
+    Point3D(const Triangle3D &t);
 
     void print() const;
     bool equal(const Point3D &a) const;
@@ -68,10 +75,12 @@ public:
     friend class Triangle3D;
     friend class Line3D;
     friend class Plane3D;
-    friend Vector3D operator+(Point3D &a, Point3D &b);
-    friend Vector3D operator-(Point3D &a, Point3D &b);
+    friend Vector3D operator+(const Point3D &a, const Point3D &b);
+    friend Vector3D operator-(const Point3D &a, const Point3D &b);
     friend std::istream& operator>>(std::istream &input, Point3D &a);
     friend float dist3D(const Point3D &p1, const Point3D &p2);
+
+    friend bool segseg_intersection3D(const LineSeg3D &ls0, const LineSeg3D &ls1);
 };
 
 
@@ -131,8 +140,10 @@ public:
     bool equal(const Triangle3D &t) const;
     bool valid() const;
 
+    friend class Point3D;
     friend class Plane3D;
     friend class Triangle2D;
+    friend class LineSeg3D;
     friend void signed_distances(std::vector<float> &signdist, const Triangle3D &t, const Plane3D &p);
 };
 
@@ -169,6 +180,23 @@ public:
     void print() const;
 
     friend void intersection_interval(std::vector<float> &interval, std::vector<Point3D> &v, std::vector<float> signdist, Line3D &l);
+};
+
+
+//Line segment class
+class LineSeg3D {
+    Point3D p0;
+    Point3D p1;
+public:
+    LineSeg3D(const Point3D &p0, const Point3D &p1);
+    //Degenerate case
+    LineSeg3D(const Triangle3D &t);
+
+    bool equal(const LineSeg3D &l) const;
+    void print() const;
+
+    friend bool segpnt_intersection3D(const LineSeg3D &ls, const Point3D &p);
+    friend bool segseg_intersection3D(const LineSeg3D &ls0, const LineSeg3D &ls1);
 };
 
 
