@@ -331,23 +331,23 @@ TEST(DotProduct, HandlesAll) {
 
 //Cross product tests
 TEST(CrossProduct, HandlesCollinear) {
-    Point3D a(1.0f, 2.0f, 3.0f);
-    Point3D b(-0.5f, -1.0f, -1.5f);
+    Vector3D a(1.0f, 2.0f, 3.0f);
+    Vector3D b(-0.5f, -1.0f, -1.5f);
 
-    Point3D prod;
+    Vector3D prod;
     cross(prod, a, b);
-    Point3D c(0.0f, 0.0f, 0.0f);
+    Vector3D c(0.0f, 0.0f, 0.0f);
 
     EXPECT_TRUE(c.equal(prod));
 }
 
 TEST(CrossProduct, HandlesAll) {
-    Point3D a(2.0f, 1.0f, -3.0f);
-    Point3D b(0.0f, -1.0f, 1.0f);
+    Vector3D a(2.0f, 1.0f, -3.0f);
+    Vector3D b(0.0f, -1.0f, 1.0f);
 
-    Point3D prod;
+    Vector3D prod;
     cross(prod, a, b);
-    Point3D c(-2.0f, -2.0f, -2.0f);
+    Vector3D c(-2.0f, -2.0f, -2.0f);
 
     EXPECT_TRUE(c.equal(prod));
 }

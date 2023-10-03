@@ -9,6 +9,7 @@
 #include <cmath>
 
 class Point3D;
+class Vector3D;
 class Point2D;
 class Triangle3D;
 class Triangle2D;
@@ -19,49 +20,84 @@ class Line3D;
 //Point-type classes
 class Point2D {
     float x, y;
-
 public:
     Point2D(float x, float y);
     Point2D(const Point3D &p, short axis_index);
 
-    void operator=(const Point2D &other);
-    Point2D operator+(const Point2D &other);
-    Point2D operator-(const Point2D &other);
-
     void print() const;
     bool equal(const Point2D &a) const;
 
+    friend class Vector2D;
     friend class Point3D;
     friend class Triangle2D;
-    friend float cross(const Point2D &a, const Point2D &b);
     friend bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
     friend bool edges_intersect(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2);
 };
 
+class Vector2D {
+    float x, y;
+public:
+    Vector2D();
+    Vector2D(float x, float y);
+    Vector2D(const Point2D &p);
+
+    Vector2D operator+(Vector2D &other);
+    Vector2D operator-(Vector2D &other);
+
+    void print() const;
+    bool equal(const Vector2D &a) const;
+
+    friend class Point2D;
+    friend class Point3D;
+    friend class Triangle2D;
+    friend float cross(const Vector2D &a, const Vector2D &b);
+};
+
 class Point3D {
     float x, y, z;
-
 public:
     Point3D();
     Point3D(float x, float y, float z);
 
-    void operator=(const Point3D &other);
-    const Point3D operator+(const Point3D &other);
-    const Point3D operator-(const Point3D &other);
-
-    bool collinear(const Point3D &p) const;
     void print() const;
     bool equal(const Point3D &a) const;
 
     friend class Point2D;
+    friend class Vector3D;
     friend class Triangle2D;
     friend class Triangle3D;
     friend class Line3D;
     friend class Plane3D;
+    friend Vector3D operator+(Point3D &a, Point3D &b);
+    friend Vector3D operator-(Point3D &a, Point3D &b);
     friend std::istream& operator>>(std::istream &input, Point3D &a);
-    friend float dot(const Point3D &a, const Point3D &b);
-    friend void cross(Point3D &prod, const Point3D &a, const Point3D &b);
     friend float dist3D(const Point3D &p1, const Point3D &p2);
+};
+
+
+class Vector3D {
+    float x, y, z;
+public:
+    Vector3D();
+    Vector3D(float x, float y, float z);
+    Vector3D(const Point3D &other);
+
+
+
+    void print() const;
+    bool equal(const Vector3D &a) const;
+    bool collinear(const Vector3D &p) const;
+
+    friend class Point2D;
+    friend class Point3D;
+    friend class Triangle2D;
+    friend class Triangle3D;
+    friend class Line3D;
+    friend class Plane3D;
+    friend Vector3D operator+(Vector3D &a, Vector3D &b);
+    friend Vector3D operator-(Vector3D &a, Vector3D &b);
+    friend float dot(const Vector3D &a, const Vector3D &b);
+    friend void cross(Vector3D &prod, const Vector3D &a, const Vector3D &b);
 };
 
 
@@ -103,7 +139,7 @@ public:
 
 //Plane class
 class Plane3D {
-    Point3D n;
+    Vector3D n;
     float d;
 
 public:
@@ -123,10 +159,10 @@ public:
 //Line class
 class Line3D {
     Point3D p;
-    Point3D d;
+    Vector3D d;
 
 public:
-    Line3D(const Point3D &p, const Point3D &d);
+    Line3D(const Point3D &p, const Vector3D &d);
     Line3D(const Plane3D &p0, const Plane3D &p1);
 
     bool equal(const Line3D &l) const;
@@ -139,9 +175,9 @@ public:
 //Other geometric functions
 bool same_sign(float a, float b);
 
-float dot(const Point3D &a, const Point3D &b);
-void cross(Point3D &prod, const Point3D &a, const Point3D &b);
-float cross(const Point2D &a, const Point2D &b);
+float dot(const Vector3D &a, const Vector3D &b);
+void cross(Vector3D &prod, const Vector3D &a, const Vector3D &b);
+float cross(const Vector2D &a, const Vector2D &b);
 
 float dist3D(const Point3D &p1, const Point3D &p2);
 

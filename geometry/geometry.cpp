@@ -16,16 +16,6 @@ Point2D::Point2D(const Point3D &p, short axis_index) {
     }
 }
 
-void Point2D::operator=(const Point2D &other) {
-    x = other.x; y = other.y; return;
-}
-Point2D Point2D::operator+(const Point2D &other) {
-    return Point2D(x+other.x, y+other.y); 
-}
-Point2D Point2D::operator-(const Point2D &other) {
-    return Point2D(x-other.x, y-other.y); 
-}
-
 void Point2D::print() const{
     std::cout << std::setprecision(3) << "(" << x << "; " << y << ")" << std::endl;
     return;
@@ -36,28 +26,34 @@ bool Point2D::equal(const Point2D &a) const {
 }
 
 
+//Vector2D methods
+Vector2D::Vector2D() {x=0; y=0;}
+Vector2D::Vector2D(float x, float y): x(x), y(y) {}
+Vector2D::Vector2D(const Point2D &other): x(other.x), y(other.y) {}
+
+Vector2D Vector2D::operator+(Vector2D &other) {
+    return Vector2D(x+other.x, y+other.y); 
+}
+Vector2D Vector2D::operator-(Vector2D &other) {
+    return Vector2D(x-other.x, y-other.y); 
+}
+
+void Vector2D::print() const{
+    std::cout << std::setprecision(3) << "(" << x << "; " << y << ")" << std::endl;
+    return;
+}
+
+bool Vector2D::equal(const Vector2D &a) const {
+    return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS);
+}
+
+
 //Point3D methods
 Point3D::Point3D() {x=0; y=0; z=0;}
 Point3D::Point3D(float x, float y, float z): x(x), y(y), z(z) {};
 
 std::istream& operator>>(std::istream &input, Point3D &a) {
     input >> a.x >> a.y >> a.z; return input;
-}
-void Point3D::operator=(const Point3D &other) {
-    x = other.x; y = other.y; z = other.z; return;
-}
-const Point3D Point3D::operator+(const Point3D &other) {
-    return Point3D(x+other.x, y+other.y, z+other.z);
-}
-const Point3D Point3D::operator-(const Point3D &other) {
-    return Point3D(x-other.x, y-other.y, z-other.z);
-}
-
-bool Point3D::collinear(const Point3D &p) const {
-    Point3D zero(0.0f, 0.0f, 0.0f);
-    Point3D prod;
-    cross(prod, *this, p);
-    return prod.equal(zero);
 }
 
 void Point3D::print() const{
@@ -67,6 +63,41 @@ void Point3D::print() const{
 
 bool Point3D::equal(const Point3D &a) const {
     return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS) && (fabs(z-a.z) < EPS);
+}
+
+
+//Vector3D methods
+Vector3D::Vector3D() {x=0; y=0; z=0;}
+Vector3D::Vector3D(float x, float y, float z): x(x), y(y), z(z) {}
+Vector3D::Vector3D(const Point3D &other): x(other.x), y(other.y), z(other.z) {}
+
+Vector3D operator+(Vector3D &a, Vector3D &b) {
+    return Vector3D(a.x+b.x, a.y+b.y, a.z+b.z);
+}
+Vector3D operator+(Point3D &a, Point3D &b) {
+    return Vector3D(a.x+b.x, a.y+b.y, a.z+b.z);
+}
+Vector3D operator-(Vector3D &a, Vector3D &b) {
+    return Vector3D(a.x-b.x, a.y-b.y, a.z-b.z);
+}
+Vector3D operator-(Point3D &a, Point3D &b) {
+    return Vector3D(a.x-b.x, a.y-b.y, a.z-b.z);
+}
+
+void Vector3D::print() const{
+    std::cout << std::setprecision(3) << "(" << x << "; " << y << "; " << z << ")" << std::endl;
+    return;
+}
+
+bool Vector3D::equal(const Vector3D &a) const {
+    return (fabs(x-a.x) < EPS) && (fabs(y-a.y) < EPS) && (fabs(z-a.z) < EPS);
+}
+
+bool Vector3D::collinear(const Vector3D &v) const {
+    Vector3D v_zero;
+    Vector3D prod;
+    cross(prod, *this, v);
+    return prod.equal(v_zero);
 }
 
 
@@ -130,8 +161,8 @@ Triangle3D::Triangle3D (const Point3D &v0, const Point3D &v1, const Point3D &v2)
     if (v0.equal(v1) && v0.equal(v2)) {type = 1; return;}
 
     //Is it a line segment?
-    Point3D a = {v1.x - v0.x, v1.y - v0.y, v1.z - v0.z};
-    Point3D b = {v2.x - v0.x, v2.y - v0.y, v2.z - v0.z};
+    Vector3D a = {v1.x - v0.x, v1.y - v0.y, v1.z - v0.z};
+    Vector3D b = {v2.x - v0.x, v2.y - v0.y, v2.z - v0.z};
     if (a.collinear(b)) {type = 2; return;}
 
     //Now this is a triangle
@@ -201,11 +232,11 @@ Plane3D::Plane3D(float a, float b, float c, float d) {
 }
 
 Plane3D::Plane3D(const Triangle3D &t) {
-    Point3D a = t.vertices[0];
-    Point3D b = t.vertices[1];
-    Point3D c = t.vertices[2];
+    Vector3D a = t.vertices[0];
+    Vector3D b = t.vertices[1];
+    Vector3D c = t.vertices[2];
     cross(n, (b - a), (c - a));
-    d = -dot(n, t.vertices[0]);
+    d = -dot(n, a);
     return;
 }
 
@@ -239,13 +270,13 @@ bool Plane3D::equal(const Plane3D &p) {
 
 
 //Line3D methods
-Line3D::Line3D(const Point3D &p, const Point3D &d) {
+Line3D::Line3D(const Point3D &p, const Vector3D &d) {
     this->p.x = p.x; this->p.y = p.y; this->p.z = p.z;
     this->d.x = d.x; this->d.y = d.y; this->d.z = d.z;
 }
 
 Line3D::Line3D(const Plane3D &p0, const Plane3D &p1) {
-    Point3D prod;
+    Vector3D prod;
     cross(prod, p0.n, p1.n);
     d.x = prod.x; d.y = prod.y; d.z = prod.z;
 
@@ -278,16 +309,16 @@ bool same_sign(float a, float b) {
     return (a*b >= 0.0f);
 }
 
-float dot(const Point3D &a, const Point3D &b) {
+float dot(const Vector3D &a, const Vector3D &b) {
     return a.x*b.x + a.y*b.y + a.z*b.z;
 }
-void cross(Point3D &prod, const Point3D &a, const Point3D &b) {
+void cross(Vector3D &prod, const Vector3D &a, const Vector3D &b) {
     prod.x = a.y*b.z - a.z*b.y;
     prod.y = a.z*b.x - a.x*b.z;
     prod.z = a.x*b.y - a.y*b.x;
     return;
 }
-float cross(const Point2D &a, const Point2D &b) {
+float cross(const Vector2D &a, const Vector2D &b) {
     return a.x*b.y - a.y*b.x;
 }
 
