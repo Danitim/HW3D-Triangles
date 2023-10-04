@@ -156,6 +156,84 @@ TEST(IntersectSegSeg3D, Case5) {
     EXPECT_FALSE(typed_intersection(a, b));
 }
 
+
+//Segment and segment intersection tests
+/*Point inside a triangle*/
+TEST(IntersectTriPnt3D, Case1) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(1, 0, 0);
+    Point3D a2(0, 1, 0);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0.33, 0.33, 0);
+    Point3D b1(0.33, 0.33, 0);
+    Point3D b2(0.33, 0.33, 0);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_TRUE(typed_intersection(a, b));
+}
+
+/*A point outside the triangle, but on its plane*/
+TEST(IntersectTriPnt3D, Case2) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(1, 0, 0);
+    Point3D a2(0, 1, 0);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(1.5, 0.5, 0);
+    Point3D b1(1.5, 0.5, 0);
+    Point3D b2(1.5, 0.5, 0);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_FALSE(typed_intersection(a, b));
+}
+
+/*A point on one of the vertices of the triangle*/
+TEST(IntersectTriPnt3D, Case3) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(1, 0, 0);
+    Point3D a2(0, 1, 0);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0, 1, 0);
+    Point3D b1(0, 1, 0);
+    Point3D b2(0, 1, 0);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_TRUE(typed_intersection(a, b));
+}
+
+/*A point on one of the sides of the triangle, but not on the vertex*/
+TEST(IntersectTriPnt3D, Case4) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(1, 0, 0);
+    Point3D a2(0, 1, 0);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0.5, 0, 0);
+    Point3D b1(0.5, 0, 0);
+    Point3D b2(0.5, 0, 0);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_TRUE(typed_intersection(a, b));
+}
+
+/*Point outside the plane of the triangle*/
+TEST(IntersectTriPnt3D, Case5) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(1, 0, 0);
+    Point3D a2(0, 1, 0);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0.5, 0.5, 1);
+    Point3D b1(0.5, 0.5, 1);
+    Point3D b2(0.5, 0.5, 1);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_FALSE(typed_intersection(a, b));
+}
+
+
 int main(int argc, char* argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -44,7 +44,26 @@ bool segseg_intersection3D(const LineSeg3D &a, const LineSeg3D &b) {
 }
 
 bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p) {
-    return false;
+    Vector3D v0 = t.vertices[0] - p;
+    Vector3D v1 = t.vertices[1] - p;
+    Vector3D v2 = t.vertices[2] - p;
+
+    Vector3D n; cross(n, (t.vertices[1]-t.vertices[0]), (t.vertices[2]-t.vertices[0]));
+    if (fabs(dot(n, v0)) > cnst::EPS)
+        return false;
+
+    float d00 = dot(v0, v0);
+    float d01 = dot(v0, v1);
+    float d02 = dot(v0, v2);
+    float d11 = dot(v1, v1);
+    float d12 = dot(v2, v2);
+    
+    float d = d00*d11 - d01*d01;
+    if (fabs(d) < cnst::EPS) return true;
+
+    float u = (d11*d02 - d01*d12)/d;
+    float v = (d00*d12 - d01*d02)/d;
+    return (u >= 0) && (v >= 0) && (u + v <= 1);
 }
 
 bool triseg_intersection3D(const Triangle3D &t0, const LineSeg3D &ls) {

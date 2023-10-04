@@ -81,6 +81,7 @@ public:
     friend float dist3D(const Point3D &p1, const Point3D &p2);
 
     friend bool segseg_intersection3D(const LineSeg3D &ls0, const LineSeg3D &ls1);
+    friend bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p);
 };
 
 
@@ -145,6 +146,8 @@ public:
     friend class Triangle2D;
     friend class LineSeg3D;
     friend void signed_distances(std::vector<float> &signdist, const Triangle3D &t, const Plane3D &p);
+
+    friend bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p);
 };
 
 
