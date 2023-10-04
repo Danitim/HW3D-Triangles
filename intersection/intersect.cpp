@@ -26,7 +26,7 @@ bool typed_intersection(const Triangle3D &t0, const Triangle3D &t1) {
     case 2:
         switch(type1) {
             case 1: {LineSeg3D ls(t0); Point3D p(t1); return segpnt_intersection3D(ls, p); break;}
-            case 2: {LineSeg3D ls0(t0); LineSeg3D ls1(t0); return segseg_intersection3D(ls0, ls1); break;}
+            case 2: {LineSeg3D ls0(t0); LineSeg3D ls1(t1); return segseg_intersection3D(ls0, ls1); break;}
             case 3: {LineSeg3D ls(t0); return triseg_intersection3D(t1, ls); break;}
         }
     case 3:

@@ -327,6 +327,7 @@ void LineSeg3D::print() const {
     std::cout << "3D Line Segment:" << std::endl;
     p0.print();
     p1.print();
+    std::cout << std::endl;
     return;
 }
 
