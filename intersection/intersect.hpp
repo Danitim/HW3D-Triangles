@@ -1,5 +1,6 @@
 #pragma once
 #include "../geometry/geometry.hpp"
+#include "../geometry/algorithm.hpp"
 #include "degenerate.hpp"
 
 void intersect_each_with_each(std::set<int> &intersections, const std::vector<Triangle3D> &arrayy);

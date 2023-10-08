@@ -1,4 +1,5 @@
 #include "../geometry/geometry.hpp"
+#include "../geometry/algorithm.hpp"
 
 bool segpnt_intersection3D(const LineSeg3D &ls, const Point3D &p);
 

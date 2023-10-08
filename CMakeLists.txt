@@ -4,10 +4,14 @@ project(HW3D_Triangles)
 
 set(geo_files
     ../geometry/geometry.hpp
-    ../geometry/geometry.cpp)
+    ../geometry/geometry.cpp
+    ../geometry/algorithm.hpp
+    ../geometry/algorithm.cpp)
 set(isect_files
     ../geometry/geometry.hpp
     ../geometry/geometry.cpp
+    ../geometry/algorithm.hpp
+    ../geometry/algorithm.cpp
     ../intersection/intersect.hpp
     ../intersection/intersect.cpp
     ../intersection/degenerate.hpp
@@ -15,6 +19,8 @@ set(isect_files
 set(deg_files
     ../geometry/geometry.hpp
     ../geometry/geometry.cpp
+    ../geometry/algorithm.hpp
+    ../geometry/algorithm.cpp
     ../intersection/intersect.hpp
     ../intersection/intersect.cpp
     ../intersection/degenerate.hpp
@@ -23,6 +29,8 @@ set(deg_files
 set(main_files
     geometry/geometry.hpp
     geometry/geometry.cpp
+    ../geometry/algorithm.hpp
+    ../geometry/algorithm.cpp
     intersection/intersect.hpp
     intersection/intersect.cpp
     intersection/degenerate.hpp

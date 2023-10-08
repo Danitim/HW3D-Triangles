@@ -11,7 +11,7 @@ bool segpnt_intersection3D(const LineSeg3D &ls, const Point3D &p) {
     return (ax_ab >= 0) && (ax_ab <= dot(ab, ab));
 }
 
-bool proj_intersection(float a1, float a2, float b1, float b2) {
+static bool proj_intersection(float a1, float a2, float b1, float b2) {
     if (a1 > a2) std::swap(a1, a2);
     if (b1 > b2) std::swap(b1, b2);
     return std::max(a1, b1) <= std::min(a2, b2);

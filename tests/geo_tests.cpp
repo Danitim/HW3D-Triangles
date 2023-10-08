@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../geometry/geometry.hpp"
+#include "../geometry/algorithm.hpp"
 
 
 //Point2D tests
