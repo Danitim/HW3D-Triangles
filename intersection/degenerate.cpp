@@ -57,7 +57,7 @@ bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p) {
     float d02 = dot(v0, v2);
     float d11 = dot(v1, v1);
     float d12 = dot(v2, v2);
-    
+
     float d = d00*d11 - d01*d01;
     if (fabs(d) < cnst::EPS) return true;
 
@@ -66,6 +66,37 @@ bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p) {
     return (u >= 0) && (v >= 0) && (u + v <= 1);
 }
 
-bool triseg_intersection3D(const Triangle3D &t0, const LineSeg3D &ls) {
+bool triseg_intersection3D(const Triangle3D &t, const LineSeg3D &ls) {
+    Vector3D v0 = t.vertices[1] - t.vertices[0];
+    Vector3D v1 = t.vertices[2] - t.vertices[0];
+    Vector3D d = ls.p1 - ls.p0;
+
+    Vector3D n; cross(n, v0, v1);
+    Vector3D h; cross(h, d, v1);
+    float a = dot(v0, h);
+    if (fabs(a) < cnst::EPS) {
+        if (fabs(dot((ls.p0 - t.vertices[0]), n)) > cnst::EPS)
+            return false;
+        short axis_index = n.nearly_oriented_axis();
+        Triangle2D t_2d(t, axis_index);
+        LineSeg2D ls_2d(ls, axis_index);
+        return triseg_intersection2D(t_2d, ls_2d);
+    }
+
+    float f = 1.0/a;
+    Vector3D s = ls.p0 - t.vertices[0];
+    float u = f*dot(s, h);
+    if ((u < 0.0) || (u > 1.0))
+        return false;
+
+    Vector3D q; cross(q, s, v0);
+    float v = f * dot(d, q);
+    if ((v < 0.0) || (u + v > 1.0))
+        return false;
+
+    float w = f*dot(v1, q);
+    if ((w >= cnst::EPS) && (w <= 1.0 + cnst::EPS))
+        return true;
+    
     return false;
 }

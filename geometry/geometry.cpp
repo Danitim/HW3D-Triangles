@@ -1,8 +1,10 @@
 #include "geometry.hpp"
 
 //Point2D methods
+Point2D::Point2D() {
+    x = 0; y = 0;
+}
 Point2D::Point2D(float x, float y): x(x), y(y) {};
-
 Point2D::Point2D(const Point3D &p, short axis_index) {
     switch (axis_index) {
     case 0:
@@ -81,6 +83,14 @@ Vector3D operator-(Vector3D &a, Vector3D &b) {
 }
 Vector3D operator-(const Point3D &a, const Point3D &b) {
     return Vector3D(a.x-b.x, a.y-b.y, a.z-b.z);
+}
+
+short Vector3D::nearly_oriented_axis() const {
+    if ((x >= y) && (x >= z))
+        return 0;
+    if ((y >= x) && (y >= z))
+        return 1;
+    return 2;
 }
 
 void Vector3D::print() const{
@@ -239,7 +249,7 @@ Plane3D::Plane3D(const Triangle3D &t) {
     return;
 }
 
-short Plane3D::nearly_oriented_axis() {
+short Plane3D::nearly_oriented_axis() const {
     if ((n.x >= n.y) && (n.x >= n.z))
         return 0;
     if ((n.y >= n.x) && (n.y >= n.z))
@@ -332,6 +342,29 @@ void LineSeg3D::print() const {
 }
 
 
+//LineSeg2D methods
+LineSeg2D::LineSeg2D(const Point2D &p0, const Point2D &p1) {
+    this->p0 = p0; this->p1 = p1;
+}
+LineSeg2D::LineSeg2D(const LineSeg3D &ls, short axis_index) {
+    Point2D a(ls.p0, axis_index);
+    Point2D b(ls.p1, axis_index);
+    p0 = a; p1 = b;
+}
+
+bool LineSeg2D::equal(const LineSeg2D &ls) const {
+    return (p0.equal(ls.p0) && p1.equal(ls.p1)) || (p0.equal(ls.p1) && p1.equal(ls.p0));
+}
+
+void LineSeg2D::print() const {
+    std::cout << "2D Line Segment:" << std::endl;
+    p0.print(); 
+    p1.print();
+    std::cout << std::endl;
+    return;
+}
+
+
 //Other geometric functions
 bool same_sign(float a, float b) {
     if ((fabs(a) < cnst::EPS) || (fabs(b) < cnst::EPS))
@@ -378,7 +411,7 @@ void intersection_interval(std::vector<float> &interval, std::vector<Point3D> &v
     return;
 }
 
-bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2) {
+bool tritri_intersection2D(const Triangle2D &t1, const Triangle2D &t2) {
     for (int i=0; i<3; ++i)
         if (t2.has_inside(t1.vertices[i]))
             return true;
@@ -388,12 +421,24 @@ bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2) {
     
     for (int i=0; i<3; ++i)
         for (int j=0; j<3; ++j)
-            if (edges_intersect(t1.vertices[i], t1.vertices[(i+1)%3], t2.vertices[i], t2.vertices[(i+1)%3]))
-            return true;
+            if (segseg_intersection2D(t1.vertices[i], t1.vertices[(i+1)%3], t2.vertices[i], t2.vertices[(i+1)%3]))
+                return true;
+
     return false;
 }
 
-bool edges_intersect(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2) {
+bool triseg_intersection2D(const Triangle2D &t, const LineSeg2D &ls) {
+    if (t.has_inside(ls.p0) || t.has_inside(ls.p1))
+        return true;
+
+    for (int i=0; i<3; ++i)
+        if (segseg_intersection2D(t.vertices[i], t.vertices[(i+1)%3], ls.p0, ls.p1))
+            return true;
+
+    return false;
+}
+
+bool segseg_intersection2D(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2) {
     float d1 = cross({p2.x - p1.x, p2.y - p1.y}, {q1.x - p1.x, q1.y - p1.y});
     float d2 = cross({q2.x - p1.x, q2.y - p1.y}, {q1.x - p1.x, q1.y - p1.y});
     float d3 = cross({p1.x - p2.x, p1.y - p2.y}, {q2.x - p2.x, q2.y - p2.y});

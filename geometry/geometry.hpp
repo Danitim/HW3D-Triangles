@@ -20,12 +20,14 @@ class Triangle2D;
 class Plane3D;
 class Line3D;
 class LineSeg3D;
+class LineSeg2D;
 
 
 //Point-type classes
 class Point2D {
     float x, y;
 public:
+    Point2D();
     Point2D(float x, float y);
     Point2D(const Point3D &p, short axis_index);
 
@@ -35,8 +37,9 @@ public:
     friend class Vector2D;
     friend class Point3D;
     friend class Triangle2D;
-    friend bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
+    friend bool tritri_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
     friend bool edges_intersect(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2);
+    friend bool segseg_intersection2D(const Point2D &a1, const Point2D &a2, const Point2D &b1, const Point2D &b2);
 };
 
 class Vector2D {
@@ -82,6 +85,7 @@ public:
 
     friend bool segseg_intersection3D(const LineSeg3D &ls0, const LineSeg3D &ls1);
     friend bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p);
+    friend bool triseg_intersection3D(const Triangle3D &t0, const LineSeg3D &ls);
 };
 
 
@@ -93,7 +97,7 @@ public:
     Vector3D(const Point3D &other);
 
 
-
+    short nearly_oriented_axis() const;
     void print() const;
     bool equal(const Vector3D &a) const;
     bool collinear(const Vector3D &p) const;
@@ -125,7 +129,8 @@ public:
     bool valid() const;
 
     friend class Triangle3D;
-    friend bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
+    friend bool tritri_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
+    friend bool triseg_intersection2D(const Triangle2D &t, const LineSeg2D &ls);
 };
 
 class Triangle3D {
@@ -145,9 +150,10 @@ public:
     friend class Plane3D;
     friend class Triangle2D;
     friend class LineSeg3D;
-    friend void signed_distances(std::vector<float> &signdist, const Triangle3D &t, const Plane3D &p);
+    friend void signed_distances(std::vector<float> &signdist, const Triangle3D &t, const Plane3D &p);\
 
     friend bool tripnt_intersection3D(const Triangle3D &t, const Point3D &p);
+    friend bool triseg_intersection3D(const Triangle3D &t, const LineSeg3D &ls);
 };
 
 
@@ -160,7 +166,7 @@ public:
     Plane3D(float a, float b, float c, float d);
     Plane3D(const Triangle3D &t);
 
-    short nearly_oriented_axis();
+    short nearly_oriented_axis() const;
     void print() const;
     bool coplanar(const Plane3D &p);
     bool equal(const Plane3D &p);
@@ -198,8 +204,24 @@ public:
     bool equal(const LineSeg3D &l) const;
     void print() const;
 
+    friend class LineSeg2D;
     friend bool segpnt_intersection3D(const LineSeg3D &ls, const Point3D &p);
     friend bool segseg_intersection3D(const LineSeg3D &ls0, const LineSeg3D &ls1);
+    friend bool triseg_intersection3D(const Triangle3D &t, const LineSeg3D &ls);
+};
+
+
+class LineSeg2D {
+    Point2D p0;
+    Point2D p1;
+public:
+    LineSeg2D(const Point2D &p0, const Point2D &p1);
+    LineSeg2D(const LineSeg3D &ls, short axis_index);
+
+    bool equal(const LineSeg2D &ls) const;
+    void print() const;
+
+    friend bool triseg_intersection2D(const Triangle2D &t, const LineSeg2D &ls);
 };
 
 
@@ -216,6 +238,8 @@ void signed_distances(std::vector<float> &signdist, const Triangle3D &t, const P
 
 void intersection_interval(std::vector<float> &interval, std::vector<Point3D> &v, std::vector<float> signdist, Line3D &l);
 
-bool check_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
+bool tritri_intersection2D(const Triangle2D &t1, const Triangle2D &t2);
 
-bool edges_intersect(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2);
+bool triseg_intersection2D(const Triangle2D &t, const LineSeg2D &ls);
+
+bool segseg_intersection2D(const Point2D &p1, const Point2D &q1, const Point2D &p2, const Point2D &q2);

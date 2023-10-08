@@ -21,7 +21,7 @@ bool typed_intersection(const Triangle3D &t0, const Triangle3D &t1) {
         switch(type1) {
             case 1: {return t0.get_vertice(0).equal(t1.get_vertice(0)); break;}
             case 2: {Point3D p(t0); LineSeg3D ls(t1); return segpnt_intersection3D(ls, p); break;}
-            case 3: {Point3D p(t1); return tripnt_intersection3D(t0, p); break;}
+            case 3: {Point3D p(t0); return tripnt_intersection3D(t1, p); break;}
         }
     case 2:
         switch(type1) {
@@ -63,7 +63,7 @@ bool tritri_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
             Triangle2D t0_2d(t0, axis_index);
             Triangle2D t1_2d(t1, axis_index);
             //Project the triangles and perform a 2D triangle intersection test.
-            return check_intersection2D(t0_2d, t1_2d);
+            return tritri_intersection2D(t0_2d, t1_2d);
         }
         else
             return false;

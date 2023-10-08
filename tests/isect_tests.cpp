@@ -128,7 +128,7 @@ TEST(Intersect2D, Case1) {
     Point2D c1(4, 4);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case2) {
@@ -142,7 +142,7 @@ TEST(Intersect2D, Case2) {
     Point2D c1(0, 1);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case3) {
@@ -156,7 +156,7 @@ TEST(Intersect2D, Case3) {
     Point2D c1(2, 1);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case4) {
@@ -170,7 +170,7 @@ TEST(Intersect2D, Case4) {
     Point2D c1(0, 1);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case5) {
@@ -184,7 +184,7 @@ TEST(Intersect2D, Case5) {
     Point2D c1(3, 1);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case6) {
@@ -198,7 +198,7 @@ TEST(Intersect2D, Case6) {
     Point2D c1(3, 3);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case7) {
@@ -212,7 +212,7 @@ TEST(Intersect2D, Case7) {
     Point2D c1(2, 0);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_TRUE(check_intersection2D(a, b));
+    EXPECT_TRUE(tritri_intersection2D(a, b));
 }
 
 TEST(Intersect2D, Case8) {
@@ -226,7 +226,7 @@ TEST(Intersect2D, Case8) {
     Point2D c1(0, -1);
     Triangle2D b(a1, b1, c1);
 
-    EXPECT_FALSE(check_intersection2D(a, b));
+    EXPECT_FALSE(tritri_intersection2D(a, b));
 }
 
 int main(int argc, char* argv[]) {
