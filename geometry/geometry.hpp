@@ -139,7 +139,7 @@ class Triangle3D {
 public:
     Triangle3D(const Point3D &v0, const Point3D &v1, const Point3D &v2);
 
-    void copy_and_rearrange(std::vector<Point3D> &v, const std::vector<float> &sign_dist) const;
+    void copy_and_rearrange(std::vector<Point3D> &v, std::vector<float> &sign_dist) const;
     Point3D get_vertice(short index) const;
     short get_type() const;
     void print() const;

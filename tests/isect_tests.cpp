@@ -14,7 +14,7 @@ TEST(Intersect3D, Case1) {
     Point3D b2(0, 0, 1);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_TRUE(tritri_intersection3D(a, b));
+    EXPECT_TRUE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case2) {
@@ -28,7 +28,7 @@ TEST(Intersect3D, Case2) {
     Point3D b2(-1, 1, 3);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_FALSE(tritri_intersection3D(a, b));
+    EXPECT_FALSE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case3) {
@@ -42,7 +42,7 @@ TEST(Intersect3D, Case3) {
     Point3D b2(-1, 1, 3);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_TRUE(tritri_intersection3D(a, b));
+    EXPECT_TRUE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case4) {
@@ -56,7 +56,7 @@ TEST(Intersect3D, Case4) {
     Point3D b2(-1, 1, 3);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_TRUE(tritri_intersection3D(a, b));
+    EXPECT_TRUE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case5) {
@@ -70,7 +70,7 @@ TEST(Intersect3D, Case5) {
     Point3D b2(-1, 1, 3);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_TRUE(tritri_intersection3D(a, b));
+    EXPECT_TRUE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case6) {
@@ -84,7 +84,7 @@ TEST(Intersect3D, Case6) {
     Point3D b2(-1, 1, 3);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_FALSE(tritri_intersection3D(a, b));
+    EXPECT_FALSE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case7) {
@@ -98,7 +98,7 @@ TEST(Intersect3D, Case7) {
     Point3D b2(-2, -1, 6);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_FALSE(tritri_intersection3D(a, b));
+    EXPECT_FALSE(typed_intersection(a, b));
 }
 
 TEST(Intersect3D, Case8) {
@@ -112,7 +112,49 @@ TEST(Intersect3D, Case8) {
     Point3D b2(-3, -3, 0);
     Triangle3D b(b0, b1, b2);
 
-    EXPECT_TRUE(tritri_intersection3D(a, b));
+    EXPECT_TRUE(typed_intersection(a, b));
+}
+
+TEST(Intersect3D, Case9) {
+    Point3D a0(1, 0, 0);
+    Point3D a1(0, 1, 0);
+    Point3D a2(0, 0, 1);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0, 0, 0);
+    Point3D b1(5, 5, 0);
+    Point3D b2(5, 5, 10);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_TRUE(typed_intersection(a, b));
+}
+
+TEST(Intersect3D, Case10) {
+    Point3D a0(1, 0, 0);
+    Point3D a1(0, 1, 0);
+    Point3D a2(0, 0, 1);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0.5, 0, 0);
+    Point3D b1(0, 0, 0);
+    Point3D b2(0, 0, 0.5);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_FALSE(typed_intersection(a, b));
+}
+
+TEST(Intersect3D, Case11) {
+    Point3D a0(0, 0, 0);
+    Point3D a1(5, 5, 0);
+    Point3D a2(5, 5, 10);
+    Triangle3D a(a0, a1, a2);
+
+    Point3D b0(0.5, 0, 0);
+    Point3D b1(0, 0, 0);
+    Point3D b2(0, 0, 0.5);
+    Triangle3D b(b0, b1, b2);
+
+    EXPECT_TRUE(typed_intersection(a, b));
 }
 
 

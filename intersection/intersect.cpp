@@ -49,8 +49,9 @@ bool tritri_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
     signed_distances(t1_signdist, t1, t0_plane);
 
     //Compare the signs of signed distances. If they are all the same return false, otherwise, proceed to the next step.
-    if (same_sign(t1_signdist[0], t1_signdist[1]) && same_sign(t1_signdist[1], t1_signdist[2]))
-        return false;
+    if ((t1_signdist[0] != 0) && (t1_signdist[1] != 0) && (t1_signdist[2] != 0))
+        if (same_sign(t1_signdist[0], t1_signdist[1]) && same_sign(t1_signdist[1], t1_signdist[2]))
+            return false;
 
     //Compute the plane equation of T1
     Plane3D t1_plane(t1);
@@ -74,8 +75,9 @@ bool tritri_intersection3D(const Triangle3D &t0, const Triangle3D &t1) {
     signed_distances(t0_signdist, t0, t1_plane);
 
     //Compare the signs of signed distances. If they are all the same return false, otherwise, proceed to the next step.
-    if (same_sign(t0_signdist[0], t0_signdist[1]) && same_sign(t0_signdist[1], t0_signdist[2]))
-        return false;
+    if ((t0_signdist[0] != 0) && (t0_signdist[1] != 0) && (t0_signdist[2] != 0))
+        if (same_sign(t0_signdist[0], t0_signdist[1]) && same_sign(t0_signdist[1], t0_signdist[2]))
+            return false;
     
     //Compute intersection line.
     Line3D inter_line(t0_plane, t1_plane);

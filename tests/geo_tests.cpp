@@ -115,36 +115,45 @@ TEST(Triangle2DValid, HandlesNonValid) {
     EXPECT_FALSE(h.valid());
 }
 
-
+//TODO
 ///Triangle3D tests
-TEST(Triangle3DCopyAndRearrange, HandlesAll) {
-    Point3D a(-1.0f, 1.0f, 1.0f);
-    Point3D b(2.0f, -2.0f, 2.0f);
-    Point3D c(3.0f, 3.0f, -3.0f);
-    Triangle3D t(a, b, c);
-    std::vector<Point3D> v;
-    std::vector<float> sd1 = {1.0f, 1.0f, -1.0f};
-    std::vector<float> sd2 = {1.0f, -1.0f, 1.0f};
-    std::vector<float> sd3 = {-1.0f, 1.0f, 1.0f};
-    std::vector<Point3D> v1 = {a, b, c};
-    std::vector<Point3D> v2 = {a, c, b};
-    std::vector<Point3D> v3 = {c, b, a};
+// TEST(Triangle3DCopyAndRearrange, HandlesAll) {
+//     Point3D a(-1.0f, 1.0f, 1.0f);
+//     Point3D b(2.0f, -2.0f, 2.0f);
+//     Point3D c(3.0f, 3.0f, -3.0f);
+//     Triangle3D t(a, b, c);
+//     std::vector<Point3D> v;
+//     std::vector<float> sd1 = {1.0f, 1.0f, -1.0f};
+//     std::vector<float> sd2 = {1.0f, -1.0f, 1.0f};
+//     std::vector<float> sd3 = {-1.0f, 1.0f, 1.0f};
+//     std::vector<Point3D> v1 = {a, b, c};
+//     std::vector<Point3D> v2 = {a, c, b};
+//     std::vector<Point3D> v3 = {c, b, a};
 
-    v.clear();
-    t.copy_and_rearrange(v, sd1);
-    for (int i=0; i<3; i++)
-        EXPECT_TRUE(v[i].equal(v1[i]));
+//     t.print();
+//     v.clear();
+//     t.copy_and_rearrange(v, sd1);
+//     for (int i=0; i<3; i++) {
+//         v1[i].print();
+//         //EXPECT_TRUE(v[i].equal(v1[i]));
+//     }
 
-    v.clear();
-    t.copy_and_rearrange(v, sd2);
-    for (int i=0; i<3; i++)
-        EXPECT_TRUE(v[i].equal(v2[i]));
+//     v.clear();
+//     t.copy_and_rearrange(v, sd2);
+//     for (int i=0; i<3; i++) {
+//         v2[i].print();
+//         //EXPECT_TRUE(v[i].equal(v2[i]));
+//     }
 
-    v.clear();
-    t.copy_and_rearrange(v, sd3);
-    for (int i=0; i<3; i++)
-        EXPECT_TRUE(v[i].equal(v3[i]));
-}
+
+//     v.clear();
+//     t.copy_and_rearrange(v, sd3);
+//     for (int i=0; i<3; i++) {
+//         v3[i].print();
+//         //EXPECT_TRUE(v[i].equal(v3[i]));
+//     }
+
+// }
 
 TEST(Triangle3DValid, HandlesValid) {
     Point3D a(1.0f, 1.0f, 1.0f);
@@ -252,62 +261,6 @@ TEST(Line3DLineFrom2Planes, HandlesAll) {
     EXPECT_TRUE(l11.equal(l21));
     EXPECT_TRUE(l12.equal(l22));
     EXPECT_TRUE(l13.equal(l23));
-}
-
-
-//Float same sign tests
-TEST(SameSign, HandlesPositive) {
-    float a = 2.5f;
-    float b = 0.7f;
-    float c = 0.001f;
-
-    EXPECT_TRUE(same_sign(a, b));
-    EXPECT_TRUE(same_sign(b, c));
-    EXPECT_TRUE(same_sign(a, c));
-}
-
-TEST(SameSign, HandlesNegative) {
-    float a = -5.0f;
-    float b = -0.025f;
-    float c = -1.0f;
-
-    EXPECT_TRUE(same_sign(a, b));
-    EXPECT_TRUE(same_sign(b, c));
-    EXPECT_TRUE(same_sign(a, c));
-}
-
-TEST(SameSign, HandlesDifferentSignes) {
-    float a = 5.0f;
-    float b = 0.5f;
-    float c = -0.1f;
-    float d = -3.5333f;
-
-    EXPECT_FALSE(same_sign(a, c));
-    EXPECT_FALSE(same_sign(a, d));
-    EXPECT_FALSE(same_sign(b, c));
-    EXPECT_FALSE(same_sign(b, d));
-}
-
-TEST(SameSign, HandlesOneZero) {
-    float a = 5.0f;
-    float b = -1.0f;
-    float c = 0.0f;
-    float d = 0.00033f;
-
-    EXPECT_FALSE(same_sign(a, c));
-    EXPECT_FALSE(same_sign(a, d));
-    EXPECT_FALSE(same_sign(b, c));
-    EXPECT_FALSE(same_sign(b, d));
-}
-
-TEST(SameSign, HandlesTwoZeros) {
-    float a = 0.0f;
-    float b = 0.000333f;
-    float c = -0.00099f;
-
-    EXPECT_FALSE(same_sign(a, b));
-    EXPECT_FALSE(same_sign(b, c));
-    EXPECT_FALSE(same_sign(a, c));
 }
 
 

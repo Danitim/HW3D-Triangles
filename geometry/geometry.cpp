@@ -178,25 +178,21 @@ Triangle3D::Triangle3D (const Point3D &v0, const Point3D &v1, const Point3D &v2)
     type = 3; return;
 }
 
-void Triangle3D::copy_and_rearrange(std::vector<Point3D> &v, const std::vector<float> &sign_dist) const {
-    if (same_sign(sign_dist[0], sign_dist[1])) {
-        v.push_back(vertices[0]);
-        v.push_back(vertices[1]);
-        v.push_back(vertices[2]);
-        return;
+void Triangle3D::copy_and_rearrange(std::vector<Point3D> &v, std::vector<float> &sign_dist) const {
+    short counter = 0;
+    for (int i=0; i<3; ++i) {
+        if (fabs(sign_dist[i]) < cnst::EPS || sign_dist[i]*sign_dist[(i+1)%3] > 0.0f) {
+            std::swap(sign_dist[counter], sign_dist[i]);
+            v.push_back(vertices[i]);
+            counter++;
+        }
     }
-
-    if (same_sign(sign_dist[1], sign_dist[2])) {
-        v.push_back(vertices[2]);
-        v.push_back(vertices[1]);
-        v.push_back(vertices[0]);
-        return;
+    
+    for (int i=0; i<3; ++i) {
+        if ((!vertices[i].equal(v[0])) && (!vertices[i].equal(v[1]))) {
+            v.push_back(vertices[i]);
+        }
     }
-
-    v.push_back(vertices[0]);
-    v.push_back(vertices[2]);
-    v.push_back(vertices[1]);
-    return;
 }
 
 Point3D Triangle3D::get_vertice(short index) const {
@@ -367,8 +363,6 @@ void LineSeg2D::print() const {
 
 //Other geometric functions
 bool same_sign(float a, float b) {
-    if ((fabs(a) < cnst::EPS) || (fabs(b) < cnst::EPS))
-        return false;
     return (a*b >= 0.0f);
 }
 
