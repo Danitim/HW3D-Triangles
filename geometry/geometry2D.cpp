@@ -5,10 +5,10 @@ bool geo2D::LineSeg::operator==(const geo2D::LineSeg &other) const {
            (p1 == other.p2 && p2 == other.p1);
 }
 
-bool geo2D::LineSeg::intersect(const geo2D::LineSeg &other) const {
+bool geo2D::LineSeg::intersect(const geo2D::LineSeg &ls) const {
     geo2D::Vector r = getDirection();
-    geo2D::Vector s = other.getDirection();
-    geo2D::Vector qp = other.getP1() - p1;
+    geo2D::Vector s = ls.getDirection();
+    geo2D::Vector qp = ls.getP1() - p1;
 
     float rxs = r.cross(s);
     float qpxr = qp.cross(r);
@@ -42,10 +42,10 @@ bool geo2D::Triangle::operator==(const geo2D::Triangle &other) const {
            (p1 == other.p3 && p2 == other.p1 && p3 == other.p2);
 }
 
-bool geo2D::Triangle::has_inside(const geo2D::Point &other) const {
+bool geo2D::Triangle::has_inside(const geo2D::Point &p) const {
     geo2D::Vector v0 = p3 - p1;
     geo2D::Vector v1 = p2 - p1;
-    geo2D::Vector v2 = other - p1;
+    geo2D::Vector v2 = p - p1;
 
     float dot00 = v0.dot(v0);
     float dot01 = v0.dot(v1);
