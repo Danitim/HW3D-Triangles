@@ -5,94 +5,91 @@ namespace cnst {
     const float EPS = 0.001;
 }
 
-class Vector2D {
+namespace geo2D {
+class Vector {
     float x, y;
 public:
-    Vector2D() : x(0.0f), y(0.0f) {}
-    Vector2D(float x, float y) : x(x), y(y) {}
+    Vector() : x(0.0f), y(0.0f) {}
+    Vector(float x, float y) : x(x), y(y) {}
 
     float getX() const { return x; }
     float getY() const { return y; }
 
-    bool operator==(const Vector2D& other) const { return fabs(x - other.x) <= cnst::EPS && fabs(y - other.y) <= cnst::EPS; }
-    bool operator!=(const Vector2D& other) const { return !(*this == other); }
+    bool operator==(const Vector& other) const { return fabs(x - other.x) <= cnst::EPS && fabs(y - other.y) <= cnst::EPS; }
+    bool operator!=(const Vector& other) const { return !(*this == other); }
 
-    Vector2D operator+(const Vector2D& other) const { return Vector2D(x + other.x, y + other.y); }
-    Vector2D operator-(const Vector2D& other) const { return Vector2D(x - other.x, y - other.y); }
+    Vector operator+(const Vector& other) const { return Vector(x + other.x, y + other.y); }
+    Vector operator-(const Vector& other) const { return Vector(x - other.x, y - other.y); }
 
-    float dot(const Vector2D& other) const { return x * other.x + y * other.y; }
-    float cross(const Vector2D& other) const { return x * other.y - y * other.x; }
+    float dot(const Vector& other) const { return x * other.x + y * other.y; }
+    float cross(const Vector& other) const { return x * other.y - y * other.x; }
 
     float length() const { return std::sqrt(x * x + y * y); }
-    Vector2D normalize() const { return Vector2D(x / length(), y / length()); }
+    Vector normalize() const { return Vector(x / length(), y / length()); }
 
-    void print() const { std::cout << "Vector2D: " << "(" << x << ", " << y << ")" << std::endl; }
+    void print() const { std::cout << "2D Vector: " << "(" << x << ", " << y << ")" << std::endl; }
 };
 
-
-class Point2D {
+class Point {
     float x, y;
 public:
-    Point2D() : x(0.0f), y(0.0f) {}
-    Point2D(float x, float y) : x(x), y(y) {}
+    Point() : x(0.0f), y(0.0f) {}
+    Point(float x, float y) : x(x), y(y) {}
 
     float getX() const { return x; }
     float getY() const { return y; }
 
-    bool operator==(const Point2D& other) const { return fabs(x - other.x) <= cnst::EPS && fabs(y - other.y) <= cnst::EPS; }
-    bool operator!=(const Point2D& other) const { return !(*this == other); }
+    bool operator==(const Point& other) const { return fabs(x - other.x) <= cnst::EPS && fabs(y - other.y) <= cnst::EPS; }
+    bool operator!=(const Point& other) const { return !(*this == other); }
 
     //Method that converts a difference between two points to a vector
-    Vector2D operator-(const Point2D& other) const { return Vector2D(x - other.x, y - other.y); }
-    Vector2D operator-(const Point2D& other) { return Vector2D(x - other.x, y - other.y); }
+    Vector operator-(const Point& other) const { return Vector(x - other.x, y - other.y); }
+    Vector operator-(const Point& other) { return Vector(x - other.x, y - other.y); }
 
-    void print() const { std::cout << "Point2D: " << "(" << x << ", " << y << ")" << std::endl; }
+    void print() const { std::cout << "2D Point: " << "(" << x << ", " << y << ")" << std::endl; }
 };
 
-
-class LineSeg2D {
-    Point2D p1, p2;
+class LineSeg {
+    Point p1, p2;
 public:
-    LineSeg2D() : p1(Point2D()), p2(Point2D()) {}
-    LineSeg2D(Point2D p1, Point2D p2) : p1(p1), p2(p2) {}
+    LineSeg() : p1(Point()), p2(Point()) {}
+    LineSeg(Point p1, Point p2) : p1(p1), p2(p2) {}
 
-    Point2D getP1() const { return p1; }
-    Point2D getP2() const { return p2; }
+    Point getP1() const { return p1; }
+    Point getP2() const { return p2; }
 
-    Vector2D getDirection() const { return p2 - p1; }
+    Vector getDirection() const { return p2 - p1; }
     float length() const { return getDirection().length(); }
 
-    bool operator==(const LineSeg2D& other) const;
-    bool operator!=(const LineSeg2D& other) const { return !(*this == other); }
+    bool operator==(const LineSeg& other) const;
+    bool operator!=(const LineSeg& other) const { return !(*this == other); }
 
-    bool intersect(const LineSeg2D& other) const;
+    bool intersect(const LineSeg& other) const;
 
     void print() const;
 };
 
-
-class Triangle2D {
-    Point2D p1, p2, p3;
+class Triangle {
+    Point p1, p2, p3;
 public:
-    Triangle2D() : p1(Point2D()), p2(Point2D()), p3(Point2D()) {}
-    Triangle2D(Point2D p1, Point2D p2, Point2D p3) : p1(p1), p2(p2), p3(p3) {}
+    Triangle() : p1(Point()), p2(Point()), p3(Point()) {}
+    Triangle(Point p1, Point p2, Point p3) : p1(p1), p2(p2), p3(p3) {}
 
-    Point2D getP1() const { return p1; }
-    Point2D getP2() const { return p2; }
-    Point2D getP3() const { return p3; }
+    Point getP1() const { return p1; }
+    Point getP2() const { return p2; }
+    Point getP3() const { return p3; }
 
-    LineSeg2D getEdge1() const { return LineSeg2D(p1, p2); }
-    LineSeg2D getEdge2() const { return LineSeg2D(p2, p3); }
-    LineSeg2D getEdge3() const { return LineSeg2D(p3, p1); }
+    LineSeg getEdge1() const { return LineSeg(p1, p2); }
+    LineSeg getEdge2() const { return LineSeg(p2, p3); }
+    LineSeg getEdge3() const { return LineSeg(p3, p1); }
 
-    bool operator==(const Triangle2D& other) const;
-    bool operator!=(const Triangle2D& other) const { return !(*this == other); }
+    bool operator==(const Triangle& other) const;
+    bool operator!=(const Triangle& other) const { return !(*this == other); }
 
-    bool has_inside(const Point2D& p) const;
-    bool intersect(const LineSeg2D& ls) const;
-    bool intersect(const Triangle2D& t) const;
+    bool has_inside(const Point& p) const;
+    bool intersect(const LineSeg& ls) const;
+    bool intersect(const Triangle& t) const;
 
     void print() const;
 };
-
-
+}

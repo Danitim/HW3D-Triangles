@@ -1,14 +1,14 @@
 #include "geometry2D.hpp"
 
-bool LineSeg2D::operator==(const LineSeg2D &other) const {
+bool geo2D::LineSeg::operator==(const geo2D::LineSeg &other) const {
     return (p1 == other.p1 && p2 == other.p2) ||
            (p1 == other.p2 && p2 == other.p1);
 }
 
-bool LineSeg2D::intersect(const LineSeg2D &other) const {
-    Vector2D r = getDirection();
-    Vector2D s = other.getDirection();
-    Vector2D qp = other.getP1() - p1;
+bool geo2D::LineSeg::intersect(const geo2D::LineSeg &other) const {
+    geo2D::Vector r = getDirection();
+    geo2D::Vector s = other.getDirection();
+    geo2D::Vector qp = other.getP1() - p1;
 
     float rxs = r.cross(s);
     float qpxr = qp.cross(r);
@@ -29,23 +29,23 @@ bool LineSeg2D::intersect(const LineSeg2D &other) const {
     }
 }
 
-void LineSeg2D::print() const {
-    std::cout << "LineSeg2D:" << std::endl;
+void geo2D::LineSeg::print() const {
+    std::cout << "2D LineSeg:" << std::endl;
     p1.print();
     p2.print();
 }
 
 
-bool Triangle2D::operator==(const Triangle2D &other) const {
+bool geo2D::Triangle::operator==(const geo2D::Triangle &other) const {
     return (p1 == other.p1 && p2 == other.p2 && p3 == other.p3) ||
            (p1 == other.p2 && p2 == other.p3 && p3 == other.p1) ||
            (p1 == other.p3 && p2 == other.p1 && p3 == other.p2);
 }
 
-bool Triangle2D::has_inside(const Point2D &other) const {
-    Vector2D v0 = p3 - p1;
-    Vector2D v1 = p2 - p1;
-    Vector2D v2 = other - p1;
+bool geo2D::Triangle::has_inside(const geo2D::Point &other) const {
+    geo2D::Vector v0 = p3 - p1;
+    geo2D::Vector v1 = p2 - p1;
+    geo2D::Vector v2 = other - p1;
 
     float dot00 = v0.dot(v0);
     float dot01 = v0.dot(v1);
@@ -60,7 +60,7 @@ bool Triangle2D::has_inside(const Point2D &other) const {
     return (u >= 0) && (v >= 0) && (u + v <= 1);
 }
 
-bool Triangle2D::intersect(const LineSeg2D &ls) const {
+bool geo2D::Triangle::intersect(const geo2D::LineSeg &ls) const {
     if (has_inside(ls.getP1()) || has_inside(ls.getP2()))
         return true;
 
@@ -70,7 +70,7 @@ bool Triangle2D::intersect(const LineSeg2D &ls) const {
     return false;
 }
 
-bool Triangle2D::intersect(const Triangle2D &t) const {
+bool geo2D::Triangle::intersect(const geo2D::Triangle &t) const {
     if (has_inside(t.p1) || has_inside(t.p2) || has_inside(t.p3))
         return true;
 
@@ -83,8 +83,8 @@ bool Triangle2D::intersect(const Triangle2D &t) const {
     return false;
 }
 
-void Triangle2D::print() const {
-    std::cout << "Triangle2D:" << std::endl;
+void geo2D::Triangle::print() const {
+    std::cout << "2D Triangle:" << std::endl;
     p1.print();
     p2.print();
     p3.print();
