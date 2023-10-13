@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../geometry/geometry2D.hpp"
 
-using namespace geo2D;
+using namespace Geo2D;
 
 TEST(LineSeg2DTest, IntersectTest) {
   // Two line segments intersect at a point

@@ -19,8 +19,10 @@ public:
     bool operator==(const Vector& v) const {return fabs(x-v.x) < cnst::EPS && fabs(y-v.y) < cnst::EPS && fabs(z-v.z) < cnst::EPS;}
     bool operator!=(const Vector& v) const {return !(*this == v);}
 
+    float length() const {return sqrt(x * x + y * y + z * z);}
     float dot(const Vector& v) const {return x * v.x + y * v.y + z * v.z; }
     Vector cross(const Vector& v) const {return Vector(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x);}
+    Vector normalize() const {return Vector(x / length(), y / length(), z / length());}
 
     short max_component() const {return (x > y) ? ((x > z) ? 0 : 2) : ((y > z) ? 1 : 2);}
     bool collinear(const Vector& v) const {return ((*this).cross(v)) == Vector();}
@@ -59,6 +61,8 @@ public:
     Point getP() const {return p;}
     Vector getD() const {return d;}
 
+    bool operator==(const Line& other) const {return (d.collinear(other.getD())) && (p - other.getP()).collinear(d);}
+
     void print() const;
 };
 
@@ -70,6 +74,8 @@ public:
 
     Point getP1() const {return p1;}
     Point getP2() const {return p2;}
+
+    bool operator==(const LineSeg& other) {return (p1 == other.getP1() && p2 == other.getP2()) || (p1 == other.getP2() && p2 == other.getP1());}
 
     Geo2D::LineSeg to_lineseg2D(short axis_index) const;
 
@@ -117,19 +123,21 @@ public:
     Point getP1() const {return p1;}
     Point getP2() const {return p2;}
     Point getP3() const {return p3;}
+    Point get_vertex(short index) const { return (index == 0) ? p1 : ((index == 1) ? p2 : p3);}
 
-    short get_type() const;
-    Triangle rearrangeVertices(std::vector<float> &sign_dist) const;
-    std::vector<float> intersection_interval(const std::vector<float> sign_dist, Point line_p, Vector line_d) const;
-    bool equal(const Triangle &t) const;
-
+    //Get triangle's degeneration type. If it's a point, return 1. If it's a line segment, return 2. Otherwise, return 3.
+    //Return triangle with rearranged vertices so that the third vertex has opposite sign_dist sign.
+    Triangle rearrange_vertices(std::vector<float> &sign_dist) const;
     Plane get_plane() const;
     std::vector<float> signed_distances(const Vector &n, float d) const;
+    std::vector<float> intersection_interval(const std::vector<float> sign_dist, Point line_p, Vector line_d) const;
 
-    bool intersect(const Point& p) const;
+    bool has_inside(const Point& p) const;
     bool intersect(const LineSeg& ls) const;
     bool intersect(const Triangle& t) const;
 
+    short get_type() const;
+    bool equal(const Triangle &t) const;
     void print() const;
 };
 }
