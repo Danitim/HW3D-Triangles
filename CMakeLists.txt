@@ -12,14 +12,12 @@ set(geo2D_files
     ../geometry/geometry3D.cpp)
 
 set(main_files
-    geometry/geometry.hpp
-    geometry/geometry.cpp
-    ../geometry/algorithm.hpp
-    ../geometry/algorithm.cpp
-    intersection/intersect.hpp
-    intersection/intersect.cpp
-    intersection/degenerate.hpp
-    intersection/degenerate.cpp)
+    geometry/geometry2D.hpp
+    geometry/geometry2D.cpp
+    geometry/geometry3D.hpp
+    geometry/geometry3D.cpp
+    intersect.hpp
+    intersect.cpp)
 
 enable_testing()
 

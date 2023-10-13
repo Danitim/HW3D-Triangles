@@ -1,5 +1,6 @@
 #include "geometry3D.hpp"
 
+
 Geo2D::Point Geo3D::Point::to_point2D(short axis_index) const {
     if (axis_index == 0) return Geo2D::Point(y, z);
     if (axis_index == 1) return Geo2D::Point(x, z);
@@ -278,7 +279,7 @@ bool Geo3D::Triangle::intersect(const Triangle& t) const {
     return (interval1[0] <= interval2[1]) && (interval2[0] <= interval1[1]);
 }
 
-short Geo3D::Triangle::get_type() const {
+short Geo3D::Triangle::degeneration_type() const {
     if (p1 == p2 && p2 == p3) return 1;
     if ((p2 - p1).collinear(p3 - p1)) return 2;
     return 3;

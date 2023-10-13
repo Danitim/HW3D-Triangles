@@ -1,5 +1,4 @@
 #include "geometry2D.hpp"
-#include <cmath>
 #include <vector>
 
 
@@ -39,6 +38,9 @@ public:
     float getX() const {return x;}
     float getY() const {return y;}
     float getZ() const {return z;}
+
+    //Input point from given istream
+    void input(std::istream &in = std::cin) {in >> x >> y >> z;}
 
     Geo2D::Point to_point2D(short axis_index) const;
     Vector to_vector() const {return Vector(x, y, z);}
@@ -124,6 +126,9 @@ public:
     Point getP2() const {return p2;}
     Point getP3() const {return p3;}
     Point get_vertex(short index) const { return (index == 0) ? p1 : ((index == 1) ? p2 : p3);}
+    short get_type() const {return type;}
+
+    void input() {p1.input(); p2.input(); p3.input(); type = degeneration_type();}
 
     //Get triangle's degeneration type. If it's a point, return 1. If it's a line segment, return 2. Otherwise, return 3.
     //Return triangle with rearranged vertices so that the third vertex has opposite sign_dist sign.
@@ -136,7 +141,7 @@ public:
     bool intersect(const LineSeg& ls) const;
     bool intersect(const Triangle& t) const;
 
-    short get_type() const;
+    short degeneration_type() const;
     bool equal(const Triangle &t) const;
     void print() const;
 };
