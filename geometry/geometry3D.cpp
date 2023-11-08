@@ -247,10 +247,9 @@ bool Geo3D::Triangle::intersect(const Triangle& t) const {
 
     std::vector<float> t_sign_dist = t.signed_distances(p.getNormal(), p.getD());
 
-    if ((t_sign_dist[0] != 0) && (t_sign_dist[1] != 0) && (t_sign_dist[2] != 0))
+    if (fabs(t_sign_dist[0]) > cnst::EPS && fabs(t_sign_dist[1]) > cnst::EPS && fabs(t_sign_dist[2]) > cnst::EPS)
         if (t_sign_dist[0]*t_sign_dist[1] >= 0.0f && t_sign_dist[1]*t_sign_dist[2] >= 0.0f)
             return false;
-    
     Plane t_plane = t.get_plane();
 
     if (p.coplanar(t_plane)) {
@@ -264,7 +263,7 @@ bool Geo3D::Triangle::intersect(const Triangle& t) const {
     }
 
     std::vector<float> sign_dist = signed_distances(t_plane.getNormal(), t_plane.getD());
-    if ((sign_dist[0] != 0) && (sign_dist[1] != 0) && (sign_dist[2] != 0))
+    if (fabs(t_sign_dist[0]) > cnst::EPS && fabs(t_sign_dist[1]) > cnst::EPS && fabs(t_sign_dist[2]) > cnst::EPS)
         if (sign_dist[0]*sign_dist[1] >= 0.0f && sign_dist[1]*sign_dist[2] >= 0.0f)
             return false;
     

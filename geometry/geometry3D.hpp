@@ -21,7 +21,7 @@ public:
     float length() const {return sqrt(x * x + y * y + z * z);}
     float dot(const Vector& v) const {return x * v.x + y * v.y + z * v.z; }
     Vector cross(const Vector& v) const {return Vector(y * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x);}
-    Vector normalize() const {return Vector(x / length(), y / length(), z / length());}
+    Vector normalize() const {int len = length(); return Vector(x/len, y/len, z/len);}
 
     short max_component() const {return (x > y) ? ((x > z) ? 0 : 2) : ((y > z) ? 1 : 2);}
     bool collinear(const Vector& v) const {return ((*this).cross(v)) == Vector();}
@@ -112,8 +112,8 @@ class Triangle {
     Point p1, p2, p3;
     short type;
 public:
-    Triangle() : p1(Point()), p2(Point()), p3(Point()) {type = get_type();}
-    Triangle(Point p1, Point p2, Point p3) : p1(p1), p2(p2), p3(p3) {type = get_type();}
+    Triangle() : p1(Point()), p2(Point()), p3(Point()) {type = degeneration_type();}
+    Triangle(Point p1, Point p2, Point p3) : p1(p1), p2(p2), p3(p3) {type = degeneration_type();}
 
     //Degenerate cases:
     Point to_point() const;
@@ -130,7 +130,6 @@ public:
 
     void input() {p1.input(); p2.input(); p3.input(); type = degeneration_type();}
 
-    //Get triangle's degeneration type. If it's a point, return 1. If it's a line segment, return 2. Otherwise, return 3.
     //Return triangle with rearranged vertices so that the third vertex has opposite sign_dist sign.
     Triangle rearrange_vertices(std::vector<float> &sign_dist) const;
     Plane get_plane() const;
@@ -141,6 +140,7 @@ public:
     bool intersect(const LineSeg& ls) const;
     bool intersect(const Triangle& t) const;
 
+    //Get triangle's degeneration type. If it's a point, return 1. If it's a line segment, return 2. Otherwise, return 3.
     short degeneration_type() const;
     bool equal(const Triangle &t) const;
     void print() const;

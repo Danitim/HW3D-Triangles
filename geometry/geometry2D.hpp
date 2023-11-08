@@ -23,7 +23,7 @@ public:
     float dot(const Vector& other) const {return x * other.x + y * other.y;}
     float cross(const Vector& other) const {return x * other.y - y * other.x;}
     float length() const {return std::sqrt(x * x + y * y);}
-    Vector normalize() const {return Vector(x / length(), y / length());}
+    Vector normalize() const {int len = length(); return Vector(x/len, y/len);}
 
     void print() const {std::cout << "2D Vector: " << "(" << x << ", " << y << ")" << std::endl;}
 };
